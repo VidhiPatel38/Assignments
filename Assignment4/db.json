@@ -1,0 +1,8 @@
+{
+    "actors": [
+        { "id": 1, "name": "Bryan Cranston", "starred": true },
+        { "id": 2, "name": "Aaron Paul", "starred": true },
+        { "id": 3, "name": "Bob Odenkirk", "starred": true },
+        { "id": 4, "name": "Dean Norris", "starred": false }
+    ]
+}
