@@ -95,7 +95,7 @@ app.get("/links", function (req, res) {
 
 });
 
-app.get("/links/:title", function (req, res) {
+app.get("/click/:title", function (req, res) {
     //console.log(req.params.title);
     //res.header("Access-Control-Allow-Origin", "*");
     MongoClient.connect(url, function (err, db) {
