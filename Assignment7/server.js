@@ -9,21 +9,16 @@
 // Use connect method to connect to the Server
 
 
-
+/*jshint esversion: 6 */
 "use strict";
-var mongodb = require('mongodb');
+var mongodb = require("mongodb");
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://localhost:27017/test';
+var url = "mongodb://localhost:27017/test";
 var express = require("express");
 var app = express();
 app.use(express.static("."));
 var bodyparser = require("body-parser");
 app.use(bodyparser.json());
-var wins1 = 0;
-var stats = {};
-var results = {};
-var loss1 = 0;
-
 
 
 app.get("/", function (req, res) {
@@ -37,21 +32,21 @@ app.listen(3000, function () {
 app.post("/links", function (req, res) {
     MongoClient.connect(url, function (err, db) {
         if (err) {
-            console.log('Unable to connect to the mongoDB server. Error:', err);
+            console.log("Unable to connect to the mongoDB server. Error:", err);
         } else {
             //HURRAY!! We are connected. :)
             var click1 = 0;
-            console.log('Post Connection established to', url);
+            console.log("Post Connection established to", url);
             console.log(req.body);
             var newLink = {};
-            newLink = { link: req.body.link, title: req.body.title, click: click1 }
-            var collection = db.collection('links');
+            newLink = { link: req.body.link, title: req.body.title, click: click1 };
+            var collection = db.collection("links");
             //var user1 = {title: 'modulus admin', name: "", click: ""};
             collection.insert([newLink], function (err, result) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log('Inserted %d documents into the "links" collection. The documents inserted with "_id" are:', result.length, result);
+                    console.log("Inserted %d documents into the collection. The documents inserted with are:", result.length, result);
                 }
                 // do some work here with the database.
 
@@ -68,25 +63,23 @@ app.get("/links", function (req, res) {
     var arrpush = [];
     MongoClient.connect(url, function (err, db) {
         if (err) {
-            console.log('Unable to connect to the mongoDB server. Error:', err);
+            console.log("Unable to connect to the mongoDB server. Error:", err);
         } else {
             //HURRAY!! We are connected. :)
-            var collection = db.collection('links');
+            var collection = db.collection("links");
 
-            console.log('Get Connection established to', url);
-
-
-            var a = collection.find();
+            console.log("Get Connection established to", url);
+ 
             collection.find().toArray(function (err, result) {
                 if (err) {
                     console.log(err);
                 } else if (result.length) {
                     console.log(result.length);
-                    console.log('Found:', result);
+                    console.log("Found:", result);
                     arrpush.push(result);
                     res.send(JSON.stringify({ arrpush }));
                 } else {
-                    console.log('No document(s) found with defined "find" criteria!');
+                    console.log("No document(s) found with defined criteria!");
                 }
 
                 // do some work here with the database.
@@ -99,7 +92,6 @@ app.get("/links", function (req, res) {
         }
 
     });
-    console.log("hey" + arrpush)
 
 });
 
@@ -108,15 +100,13 @@ app.get("/links/:title", function (req, res) {
     //res.header("Access-Control-Allow-Origin", "*");
     MongoClient.connect(url, function (err, db) {
         if (err) {
-            console.log('Unable to connect to the mongoDB server. Error:', err);
+            console.log("Unable to connect to the mongoDB server. Error:", err);
         } else {
             //HURRAY!! We are connected. :)
-            var collection = db.collection('links');
+            var collection = db.collection("links");
             //console.log(:title)
-            console.log('Get Connection established to', url);
-            var a = collection.find();
+            console.log("Get Connection established to", url);
             var a = req.params.title;
-            console.log("hey" + a);
 
             //collection.update({ title: a }, { $inc: { click: 1 } })
 
