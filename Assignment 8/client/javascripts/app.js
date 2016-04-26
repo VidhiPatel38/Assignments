@@ -102,7 +102,7 @@ var main = function(toDoObjects) {
                         $input.val("");
                         $tagInput.val("");
                     });
-                    socket.emit("+", newToDo);
+                    socket.emit("add", newToDo);
                 });
 
                 $content = $("<div>").append($inputLabel)
