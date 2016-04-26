@@ -23,12 +23,12 @@ var main = function(toDoObjects) {
             $("main .content").empty(); 
             
             if ($element.parent().is(":nth-child(1)")) {
-                $content = $("<ul id='freshList'>");
+                $content = $("<ul id='newList'>");
                 for (i = toDos.length - 1; i >= 0; i--) {
                     $content.append($("<li>").text(toDos[i]));
                 }
             } else if ($element.parent().is(":nth-child(2)")) {
-                $content = $("<ul id='agedList'>");
+                $content = $("<ul id='oldList'>");
                 toDos.forEach(function(todo) {
                     $content.append($("<li>").text(todo));
                 });
@@ -78,7 +78,7 @@ var main = function(toDoObjects) {
                     $inputLabel = $("<p>").text("Description: "),
                     $tagInput = $("<input>").addClass("tags"),
                     $tagLabel = $("<p>").text("Tags: "),
-                    $button = $("<span>").text("Add");
+                    $button = $("<span>").text("+");
 
                 $button.on("click", function() {
                     var description = $input.val(),
@@ -122,18 +122,18 @@ var main = function(toDoObjects) {
 
     
     socket.on("newToDO", function(data) {
-        var $new = $("#freshList"),
-            $old = $("#agedList"),
+        var $newList = $("#newList"),
+            $oldList = $("#oldList"),
             $tagTab = $("#tagList"),
             $myDescription = data.description,
             $myTag = data.tags,
             $newItem = $("<li>").text($myDescription).hide();
         
-        if (($new.length) > 0) {
-            $new.prepend($newItem);
+        if (($newList.length) > 0) {
+            $newList.prepend($newItem);
             $newItem.slideDown(500);
-        } else if (($old.length) > 0) {
-            $old.append($newItem);
+        } else if (($oldList.length) > 0) {
+            $oldList.append($newItem);
             $newItem.slideDown(500);
         } else if (($tagTab.length) > 0) {
             $("main .content").append($("<h3>").text($myTag));
