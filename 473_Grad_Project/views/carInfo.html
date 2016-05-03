@@ -1,0 +1,90 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo"><strong>ROUTE 66</strong></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a ng-click="home()">HOME</a></li>
+      <li>
+        <a class="waves-effect waves-light modal-trigger" ng-click="signUp()" href="#modal3">LOGIN</a>
+      </li>
+      <li><a ng-click="loc()" id="carLoc">BACK</a></li>
+      <li><a ng-click="abtUs()">About US</a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
+<div class="row" ng-init="doSomething1()">
+
+  <div ng-repeat="car1 in carData1" id="carD">
+
+    <div ng-repeat="car2 in car1.cars">
+      <div class="row">
+        <div ng-repeat="car3 in car2.sedan_cars">
+
+          <div class="col s3">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" ng-src={{car3.img}}>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{car2.type}}<i class="material-icons right">more_vert</i></span>
+
+              </div>
+              <div class="card-reveal teal">
+                <span class="card-title grey-text text-darken-4">Car Details<i class="material-icons right">close</i></span>
+                <h5> car id: {{car3.car_id}} </h5>
+                <h5> Car name: {{car3.name}}</h5>
+                <h5> Car rate: {{car3.rate}}</h5>
+                <h5> Car available: {{car3.available}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div ng-repeat="car3 in car2.suv_cars">
+
+          <div class="col s3">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" ng-src={{car3.img}}>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{car2.type}}<i class="material-icons right">more_vert</i></span>
+
+              </div>
+              <div class="card-reveal teal">
+                <span class="card-title grey-text text-darken-4">Car Details<i class="material-icons right">close</i></span>
+                <h5> car id: {{car3.car_id}} </h5>
+                <h5> Car name: {{car3.name}}</h5>
+                <h5> Car rate: {{car3.rate}}</h5>
+                <h5> Car available: {{car3.available}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div ng-repeat="car3 in car2.hatch_cars">
+
+          <div class="col s3">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" ng-src={{car3.img}}>
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{car2.type}}<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-reveal teal">
+                <span class="card-title grey-text text-darken-4">Car Details<i class="material-icons right">close</i></span>
+                <h5> car id: {{car3.car_id}} </h5>
+                <h5> Car name: {{car3.name}}</h5>
+                <h5> Car rate: {{car3.rate}}</h5>
+                <h5> Car available: {{car3.available}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

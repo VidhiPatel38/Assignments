@@ -1,0 +1,20 @@
+{
+    "car":"name",
+    "bookings":[
+        {
+            "pickup":"5/2",
+            "drop":"5/2",
+            "bookedby":"userName"
+        },
+        {
+            "pickup":"5/4",
+            "drop":"5/7",
+            "bookedby":"userName"
+        },
+        {
+            "pickup":"5/10",
+            "drop":"5/11",
+            "bookedby":"userName"
+        }
+    ]
+}

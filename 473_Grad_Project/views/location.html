@@ -1,0 +1,36 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo"><strong>ROUTE 66</strong></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a ng-click="home()">LOGOUT</a></li>
+
+    </ul>
+  </div>
+  </div>
+</nav>
+<img src="images/car_loc3.jpg" id="bg" alt="">
+<div class="row" ng-init="doSomething()">
+
+  <div class="col s4">
+
+    <div class="card-panel deep-orange lighten-5" id="loc_info">
+      <div class="row">
+
+        <span class="black-text">
+            <label>Loactions to rent the cars</label>
+                  <select class="browser-default" id="cityName">
+                    <option value="" disabled "selected >Choose Your Loaction</option>
+                    <option value="1">anaheim</option>
+                    <option value="2">fullerton</option>
+                    <option value="3">irvine</option>
+                    <option value="4">sacremanto</option>
+                  </select>
+            
+          </span>
+      </div>
+      <center><button class="btn waves-effect waves-light" ng-click="getLoc1()">Search
+    <i class="material-icons right">search</i></center>
+  </button>
+    </div>
+  </div>
+</div>

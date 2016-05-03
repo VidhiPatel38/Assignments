@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html ng-app="RentCar">
+
+<head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <!--Import materialize.css-->
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Angular libraries-->
+  
+</head>
+
+<body ng-controller="RentController" ng-cloak="" id="backg">
+  <!--Import jQuery before materialize.js-->
+  
+   <!-- <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a ng-click="home()">HOME</a></li>
+          <li>
+            <a class="waves-effect waves-light modal-trigger" ng-click="signUp()" href="#modal3">LOGIN</a>
+          </li>
+          <li><a ng-click ="loc()" id="carLoc" >LOCATIONS</a></li>
+          <li><a ng-click="abtUs()">About US</a></li>
+        </ul>
+      </div>
+  </div>
+  </nav>-->
+  <div ng-view></div>
+  <footer>
+  <div class="footer-copyright">
+      <div class="container">
+     <a class="brown-text text-lighten-3" href=""></a>
+      </div>
+    </div>
+  </footer>
+  <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Sign Up Page</h4>
+            <p>Enter your user name and password </p>
+  <div class="row">
+    <form>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" ng-model="email1">
+          <label for="email" >Email</label>
+        </div>
+        </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" ng-model="pass1">
+          <label for="password">Password</label>
+        </div>
+      </div>
+    </form>
+  </div>
+   </div>
+        <div class="modal-footer">
+            <a href="#modal4"  ng-click= "newUser()"id="reg1" class=" modal-action waves-effect waves-orange btn-flat">SIGNUP</a>
+
+            <a href="#!" ng-click="signUp1()" id="reg" class=" modal-action waves-effect waves-orange btn-flat">LOGIN</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-orange btn-flat">CLOSE</a>
+        </div>
+    </div> 
+<div id="modal4" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Please Register</h4>
+            <p>Create your profile </p>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="eg:vidhi" id="first_name" type="text" class="validate" ng-model= "first_name2">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="eg:patel" id="last_name" type="text" class="validate" ng-model="last_name2">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" ng-model="email2">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" ng-model="pass2">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="address" type="text" class="validate" ng-model="address">
+          <label for="address">Address</label>
+        </div>
+      </div>
+    </form>
+  </div>
+   </div>
+        <div class="modal-footer">
+            <a href="#!" ng-click="register1()" id="reg" class=" modal-action waves-effect waves-orange btn-flat">Register</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-orange btn-flat">Close</a>
+        </div>
+    </div> 
+    <!-- Modal Trigger
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>-->
+
+  <!-- Modal Structure -->
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <h4>Booked Dates</h4>
+      <div class="row" ng-repeat="bookedDate in disDate">
+        <div>{{bookedDate}}</div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--Compiled and minified JavaScript -->
+  
+
+    <script src="node_modules/angular/angular.js" type="text/javascript"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <!--<script type="text/javascript" src="js/index.js"></script>-->
+     <script src="js/controller.js"></script>
+
+</body>
+
+</html>
+
+<!--
+  <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Please Register</h4>
+            <p>Create your profile </p>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="eg:vidhi" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="eg:patel" id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" id="address" type="text" class="validate">
+          <label for="address">Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+    </form>
+  </div>
+   </div>
+        <div class="modal-footer">
+            <a href="#!" ng-click="signUp1()" id="reg" class=" modal-action waves-effect waves-orange btn-flat">Register</a>
+            <a href="#!" class=" modal-action modal-close waves-effect waves-orange btn-flat">Close</a>
+        </div>
+    </div> 
+-->
